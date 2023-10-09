@@ -173,14 +173,13 @@ class App {
       activeProjectsList.addProject.bind(activeProjectsList)
     );
 
-    // const someScript = document.createElement('script');
-    // someScript.textContent = 'alert("Hi there!");';
-    // document.head.append(someScript);
+    const timerId = setTimeout(this.startAnalytics, 3000); // timer that runs once
 
-    // this.startAnalytics();
     document
-      .getElementById('start-analytics-btn')
-      .addEventListener('click', this.startAnalytics);
+      .getElementById('stop-analytics-btn')
+      .addEventListener('click', () => {
+        clearTimeout(timerId);
+      });
   }
 
   static startAnalytics() {
